@@ -22,7 +22,6 @@ function permissCheck(){
 }
 
 function printChart(ctx,type,data,labels){
-  console.log(data);
   var boolean = true;
   var datasets = [];
   if (isNaN(data[0])) {
@@ -31,8 +30,7 @@ function printChart(ctx,type,data,labels){
         label: "team" + (i+1),
         data:data[i]
       }
-      labels = ["gen","feb","mar","apr","mag","giu","lugl","ago","sett","ott","nov","dic"],
-      console.log(datasets);
+      labels = labels;
     }
   }else {
     datasets[0] ={

@@ -3,12 +3,15 @@ header("Content-Type: application/json");
 require_once "data.php";
 $permiss=$_GET["permiss"];
 $data=[];
-function organizziamoci($dati){
+function setData($dati){
   $labels = [];
   $efficiency = [];
   foreach ($dati["data"] as $name => $value) {
     $labels[] = $name;
     $efficiency[] = $value;
+  };
+  if (is_array($dati["data"]["Team1"]) == true) {
+    $labels = ["gen","feb","mar","apr","mag","giu","lugl","ago","sett","ott","nov","dic"];
   };
   $oggetto=[
     "type" => $dati["type"],
@@ -24,7 +27,7 @@ $grapGuest=[
   "data" => $graphs["fatturato"]["data"],
   "access" => $graphs["fatturato"]["access"]
 ];
-$newGraphs=[$grapGuest, organizziamoci($graphs["fatturato_by_agent"]), organizziamoci($graphs["team_efficiency"])];
+$newGraphs=[$grapGuest, setData($graphs["fatturato_by_agent"]), setData($graphs["team_efficiency"])];
 $boolean=true;
 
 foreach ($newGraphs as $key => $graph) {
