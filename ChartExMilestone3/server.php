@@ -3,6 +3,7 @@ header("Content-Type: application/json");
 require_once "data.php";
 $permiss=$_GET["permiss"];
 $data=[];
+
 function setData($dati){
   $labels = [];
   $efficiency = [];
@@ -10,9 +11,10 @@ function setData($dati){
     $labels[] = $name;
     $efficiency[] = $value;
   };
-  if (is_array($dati["data"]["Team1"]) == true) {
+  if (is_array($dati["data"]["Team1"]) == true | $dati[0] == true) {
     $labels = ["gen","feb","mar","apr","mag","giu","lugl","ago","sett","ott","nov","dic"];
   };
+
   $oggetto=[
     "type" => $dati["type"],
     "labels"=> $labels,
@@ -21,13 +23,8 @@ function setData($dati){
   ];
   return $oggetto;
 };
-$grapGuest=[
-  "type" => $graphs["fatturato"]["type"],
-  "labels"=> ["gen","feb","mar","apr","mag","giu","lugl","ago","sett","ott","nov","dic"],
-  "data" => $graphs["fatturato"]["data"],
-  "access" => $graphs["fatturato"]["access"]
-];
-$newGraphs=[$grapGuest, setData($graphs["fatturato_by_agent"]), setData($graphs["team_efficiency"])];
+
+$newGraphs=[setData($graphs["fatturato"]), setData($graphs["fatturato_by_agent"]), setData($graphs["team_efficiency"])];
 $boolean=true;
 
 foreach ($newGraphs as $key => $graph) {

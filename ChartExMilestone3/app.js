@@ -57,7 +57,7 @@ function printChart(ctx,type,data,labels){
 }
 
 function init(){
-  permissCheck()
+  permissCheck();
 }
 
 $(document).ready(init);
