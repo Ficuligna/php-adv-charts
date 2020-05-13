@@ -30,7 +30,6 @@ function printChart(ctx,type,data,labels){
         label: "team" + (i+1),
         data:data[i]
       }
-      labels = labels;
     }
   }else {
     datasets[0] ={

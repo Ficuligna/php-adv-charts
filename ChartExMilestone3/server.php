@@ -10,11 +10,10 @@ function setData($dati){
   foreach ($dati["data"] as $name => $value) {
     $labels[] = $name;
     $efficiency[] = $value;
+    if (is_array($value) | !is_String($name) ) {
+      $labels = ["gen","feb","mar","apr","mag","giu","lugl","ago","sett","ott","nov","dic"];
+    };
   };
-  if (is_array($dati["data"]["Team1"]) == true | $dati[0] == true) {
-    $labels = ["gen","feb","mar","apr","mag","giu","lugl","ago","sett","ott","nov","dic"];
-  };
-
   $oggetto=[
     "type" => $dati["type"],
     "labels"=> $labels,
