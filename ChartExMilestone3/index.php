@@ -18,10 +18,6 @@
 
     </div>
     <div class="canvini">
-      <canvas id="graph1" class="graph"></canvas>
-      <canvas id="graph2" class="graph"></canvas>
-      <canvas id="graph3" class="graph"></canvas>
-
     </div>
 
   </body>
