@@ -6,11 +6,9 @@ function permissCheck(){
       method: "GET",
       data: {permiss: permiss},
       success: function(data){
-        for (var i = 0; i < data.length; i++) {
-          $(".canvini").append('<canvas id="graph'+ (i+1) +'" class="graph"></canvas>');
-        }
         i = 0;
         for (var graph of data) {
+          $(".canvini").append('<canvas id="graph'+ (i+1) +'" class="graph"></canvas>');
           i += 1;
           printChart(
             $(".graph:nth-child("+i+")"),

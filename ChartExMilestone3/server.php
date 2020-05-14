@@ -25,7 +25,6 @@ function setData($dati){
 
 $newGraphs=[setData($graphs["fatturato"]), setData($graphs["fatturato_by_agent"]), setData($graphs["team_efficiency"])];
 $boolean=true;
-
 foreach ($newGraphs as $key => $graph) {
   if ($boolean) {
     $data[]= $graph;
