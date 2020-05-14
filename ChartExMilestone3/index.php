@@ -15,10 +15,8 @@
         <option value="clevel">clevel</option>
       </select>
       <button type="button" name="button">Richiedi Accesso</button>
-
     </div>
     <div class="canvini">
     </div>
-
   </body>
 </html>

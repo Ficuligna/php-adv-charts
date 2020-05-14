@@ -9,7 +9,6 @@ function permissCheck(){
         for (var i = 0; i < data.length; i++) {
           $(".canvini").append('<canvas id="graph'+ (i+1) +'" class="graph"></canvas>');
         }
-        console.log(data.length);
         i = 0;
         for (var graph of data) {
           i += 1;

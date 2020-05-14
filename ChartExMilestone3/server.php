@@ -34,5 +34,8 @@ foreach ($newGraphs as $key => $graph) {
     $boolean = false;
   };
 };
-
+//nel caso in cui esistano diversi grafici con lo stesso livello di permiss
+//allora mi itero una variabile per ogni ciclo, aggiungo un if che controlla
+//se nel graph successivo la chiava "access" continua ad essere quella cercata
+//in tal caso il boolean rimane true, in caso contrario diventa false
 echo json_encode($data);
